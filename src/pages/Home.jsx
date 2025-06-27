@@ -24,13 +24,16 @@ function Home() {
         <div className="home-container">
             {/* 1. 배경 비디오 */}
             <video
-                src="/video/video.webm"
                 autoPlay
                 muted
                 playsInline
                 onEnded={handleVideoEnd}
                 className="bg-video"
-            />
+                controls
+            >
+                <source src="/LabSite/video/video.webm" type="video/webm" />
+                Your browser does not support the video tag.
+            </video>
 
             {/* 2. 흰 배경 트랜지션 */}
             <div className={`bg-fade${videoEnded ? " active" : ""}`}></div>
