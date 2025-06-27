@@ -4,7 +4,7 @@ function Professor() {
             <div className="row g-5 align-items-center">
                 {/* 좌측: 프로필 사진/기본정보 */}
                 <div className="col-md-5 col-lg-4 text-center">
-                    <img src="/img/Professor.jpeg" alt="방진숙 교수님" className="rounded-circle shadow mb-3 pro-img"/>
+                    <img src="LabSite/img/Professor.jpeg" alt="방진숙 교수님" className="rounded-circle shadow mb-3 pro-img"/>
                     <h2 className="fw-bold mt-4 mb-2">방진숙</h2>
                     <div className="mb-2">(Jinsuk Bang)</div>
                     <div className="text-secondary mb-2">AI융합대학 컴퓨터공학부</div>
