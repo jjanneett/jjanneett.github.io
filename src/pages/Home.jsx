@@ -24,7 +24,7 @@ function Home() {
         <div className="home-container">
             {/* 1. 배경 비디오 */}
             <video
-                src="/src/video/video.webm"
+                src="/video/video.webm"
                 autoPlay
                 muted
                 playsInline
