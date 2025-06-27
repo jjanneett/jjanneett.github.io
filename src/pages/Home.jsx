@@ -2,10 +2,10 @@ import { useRef, useState, useEffect } from "react";
 import "../index.css";
 
 const imageList = [
-    "/img/React-icon.png",
-    "/img/springboot-icon.png",
-    "/img/fastapi.svg",
-    "/img/AI-icon.png"
+    "/LabSite/img/React-icon.png",
+    "/LabSite/img/springboot-icon.png",
+    "/LabSite/img/fastapi.svg",
+    "/LabSite/img/AI-icon.png"
 ];
 
 function Home() {
