@@ -60,10 +60,10 @@ function Home() {
                         <div className="card shadow-lg border-0 p-5 text-center bg-light home-card">
                             <div className="mb-4">
                                 <img
-                                    src="img/logo.png"
+                                    src="/LabSite/img/logo.png"
                                     alt="logo"
                                     className="home-logo"
-                                />
+                                />np
                             </div>
                             <h1 className="display-5 mb-3 fw-bold">Welcome to i-turtle Lab!</h1>
                             <p className="lead mb-4">
