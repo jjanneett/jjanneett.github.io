@@ -2,6 +2,7 @@
   "name": "lab-website",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://jjanneett.github.io/LabSite/",
   "type": "module",
   "scripts": {
     "dev": "vite",
