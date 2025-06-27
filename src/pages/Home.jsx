@@ -29,7 +29,6 @@ function Home() {
                 playsInline
                 onEnded={handleVideoEnd}
                 className="bg-video"
-                controls
                 >
             <source src="/LabSite/video/video.webm" type="video/webm" />
                 Your browser does not support the video tag.
