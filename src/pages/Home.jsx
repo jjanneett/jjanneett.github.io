@@ -30,10 +30,10 @@ function Home() {
                 onEnded={handleVideoEnd}
                 className="bg-video"
                 controls
-            >
-                <source src="/LabSite/video/video.webm" type="video/webm" />
+                >
+            <source src="/LabSite/video/video.webm" type="video/webm" />
                 Your browser does not support the video tag.
-            </video>
+        </video>
 
             {/* 2. 흰 배경 트랜지션 */}
             <div className={`bg-fade${videoEnded ? " active" : ""}`}></div>
