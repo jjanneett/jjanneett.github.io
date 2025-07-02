@@ -34,7 +34,7 @@ export default function LoginModal({ show, handleClose, handleLogin }) {
                     <FloatingLabel controlId="loginId" label="ID" className="mb-3">
                         <Form.Control
                             type="text"
-                            placeholder="아이디"
+                            placeholder="ID"
                             value={id}
                             autoFocus
                             onChange={(e) => setId(e.target.value)}
@@ -45,7 +45,7 @@ export default function LoginModal({ show, handleClose, handleLogin }) {
                     <FloatingLabel controlId="loginPassword" label="PASSWORD" className="mb-4">
                         <Form.Control
                             type="password"
-                            placeholder="패스워드"
+                            placeholder="PASSWORD"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="rounded-3 bg-light-subtle border-0 px-3 py-2 shadow-sm login-input"
