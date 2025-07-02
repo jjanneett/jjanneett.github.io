@@ -5,6 +5,7 @@ import App from './App.jsx';
 import { HashRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import './Font.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
