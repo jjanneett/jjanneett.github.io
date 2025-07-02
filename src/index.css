@@ -1,3 +1,6 @@
+/* -----------------------------------
+   공통 초기화 및 기본 스타일
+----------------------------------- */
 html, body, #root {
   width: 100%;
   min-height: 100vh;
@@ -8,7 +11,9 @@ html, body, #root {
   font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif;
 }
 
-/* 반응형 커스텀: 1200px 이하 태블릿, 768px 이하 모바일 */
+/* -----------------------------------
+   반응형
+----------------------------------- */
 @media (max-width: 1200px) {
   .col-md-4 {
     flex: 0 0 50%;
@@ -35,33 +40,40 @@ html, body, #root {
   }
 }
 
-/* 카드 및 박스 그림자 */
+/* -----------------------------------
+   카드, 버튼, 그림자
+----------------------------------- */
 .card, .shadow-lg {
-  box-shadow: 0 6px 32px 0 rgba(60, 80, 170, 0.09), 0 1.5px 5px 0 rgba(50, 70, 120, 0.08);
+  box-shadow: 0 6px 32px rgba(60, 80, 170, 0.09), 0 1.5px 5px rgba(50, 70, 120, 0.08);
 }
-
 .navbar, .footer {
-  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.06);
-  border-radius: 0 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
-
 .btn-primary, .btn {
   border-radius: 1rem;
-  box-shadow: 0 4px 16px 0 rgba(50, 120, 255, 0.07);
+  box-shadow: 0 4px 16px rgba(50, 120, 255, 0.07);
   font-weight: 600;
 }
-
 .accordion-item {
   border-radius: 1rem !important;
   margin-bottom: 0.7rem;
 }
+.navbar, .footer, .card {
+  border-radius: 0 !important;
+}
 
+/* -----------------------------------
+   프로필 이미지
+----------------------------------- */
 .pro-img {
   width: 120px;
   height: 120px;
   object-fit: cover;
 }
 
+/* -----------------------------------
+   홈 배경 비디오
+----------------------------------- */
 .bg-video {
   width: 100vw;
   height: 100vh;
@@ -72,6 +84,7 @@ html, body, #root {
   z-index: 1;
 }
 
+/* 흰 배경 트랜지션 */
 .bg-fade {
   transition: opacity 0.3s cubic-bezier(.4,2,.4,1);
   opacity: 0;
@@ -88,6 +101,7 @@ html, body, #root {
   opacity: 1;
 }
 
+/* 카드 표시 트랜지션 */
 .card-fade {
   position: absolute;
   z-index: 3;
@@ -99,18 +113,11 @@ html, body, #root {
   align-items: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.45s cubic-bezier(.4, 2, .4, 1);
+  transition: opacity 0.45s cubic-bezier(.4,2,.4,1);
 }
 .card-fade.active {
   opacity: 1;
   pointer-events: auto;
-}
-
-.home-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .home-card {
@@ -118,103 +125,84 @@ html, body, #root {
   max-width: 800px;
   border-radius: 0;
 }
-
 .home-logo {
   width: 100px;
   height: 100px;
   object-fit: contain;
 }
 
-/* 기술 로고가 "처음엔 안 보이다가 생기는" 애니메이션 */
-@keyframes tech-pop-up {
-  0% {
-    opacity: 0;
-    transform: translateY(48px) scale(0.7);
-    filter: blur(6px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-8px) scale(1.08);
-    filter: blur(0);
-  }
-  80% {
-    transform: translateY(2px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
+/* -----------------------------------
+   이미지 스크롤러
+----------------------------------- */
+.scroller {
+  width: 100%;
+  overflow: hidden;
+  height: 60px;
+  position: relative;
+  margin-bottom: 1rem;
+  background: transparent;
 }
-
-/* tech-image에 기본적으로 숨기기 (애니메이션 준비) */
-.tech-image {
-  opacity: 0;
-  transform: translateY(48px) scale(0.7);
-  filter: blur(6px);
+.scroller-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
 }
-
-/* 카드가 등장하면 각 기술로고가 시차를 두고 pop-up 효과를 가짐 */
-.card-fade.active .tech-image {
-  animation: tech-pop-up 0.7s cubic-bezier(.39,1.6,.58,1.01) forwards;
+.scroll-animate {
+  animation: scroll-left 25s linear infinite;
 }
-
-.card-fade.active .tech-image:nth-child(1) { animation-delay: 0.05s; }
-.card-fade.active .tech-image:nth-child(2) { animation-delay: 0.18s; }
-.card-fade.active .tech-image:nth-child(3) { animation-delay: 0.31s; }
-.card-fade.active .tech-image:nth-child(4) { animation-delay: 0.44s; }
-.card-fade.active .tech-image:nth-child(5) { animation-delay: 0.57s; }
-
-/* 기술 로고 애니메이션 추가 */
-@keyframes tech-up {
-  from {
-    opacity: 0;
-    transform: translateY(48px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
-
-/* 모든 .tech-image에 기본 숨김 및 animation 효과 */
-/*.tech-image {
-  opacity: 0;
-  animation: tech-up 0.7s cubic-bezier(.38,1.62,.55,.92) forwards;
-}*/
-
-/* 왼쪽부터 차례 차등(delay) 적용 */
-/*.tech-image:nth-child(1) { animation-delay: 0.05s; }
-.tech-image:nth-child(2) { animation-delay: 0.17s; }
-.tech-image:nth-child(3) { animation-delay: 0.29s; }
-.tech-image:nth-child(4) { animation-delay: 0.41s; }
-.tech-image:nth-child(5) { animation-delay: 0.53s; }*/
-
-/* 기술 로고 전용 스타일 */
-.tech-image {
-  margin-right: 24px;
-  height: 56px;
-  transition: transform .15s;
-  filter: drop-shadow(0 1.5px 4px rgba(30,40,80,0.07));
-  background: white;
-  border-radius: 12px;
-  padding: 7px 5px;
+.scroller-img {
+  height: 48px;
+  margin-right: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
-.tech-image:last-child {
-  margin-right: 0;
-}
-
-/* 카드 등장(애니메이션 실행) 때만 보임 */
-/*.card-fade.active .tech-image {
-  opacity: 1;
-}*/
-
-/* 반응형(기존 내용에 이어서) */
 @media (max-width: 768px) {
-  .tech-image {
-    height: 38px;
-    margin-right: 12px;
-    padding: 3px 2px;
-    /* 애니메이션 적용 유지 */
+  .scroller-img {
+    height: 40px;
+    margin-right: 16px;
   }
+}
+
+/* -----------------------------------
+   로그인 모달
+----------------------------------- */
+.login-modal-content {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.login-modal-body {
+  background: #2c2f33 !important;
+  border-radius: 1rem;
+}
+
+/* 인풋 다크톤 */
+.login-input {
+  background-color: #2c2f33 !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+}
+.login-input::placeholder {
+  color: rgba(255,255,255,0.6) !important;
+}
+.login-input:focus {
+  box-shadow: 0 0 0 0.15rem rgba(255,255,255,0.4);
+  outline: none;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+  color: #222;
+  border: none;
+}
+.login-btn:hover {
+  filter: brightness(0.95);
+  transform: scale(1.02);
+  transition: 0.13s;
 }
