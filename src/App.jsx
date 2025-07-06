@@ -50,8 +50,14 @@ export default function App() {
                     <Route path="/professor" element={<Professor />} />
                     <Route path="/researchers" element={<Researchers />} />
                     <Route path="/papers" element={<Papers />} />
-                    <Route path="/notices" element={<Notices />} />
-                    <Route path="/qna" element={<QnA isLoggedIn={isLoggedIn} questions={questions} setQuestions={setQuestions} />} />
+                    <Route path="/notices" element={<Notices isLoggedIn={isLoggedIn} />} />
+                    <Route path="/qna" element={
+                        <QnA
+                            isLoggedIn={isLoggedIn}
+                            questions={questions}
+                            setQuestions={setQuestions}
+                        />
+                    } />
                     <Route path="/ask" element={<AskPage setQuestions={setQuestions} />} />
                     <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
                 </Routes>

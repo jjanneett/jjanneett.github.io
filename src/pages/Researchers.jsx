@@ -1,7 +1,15 @@
 function Researchers() {
     const researchers = [
-        { name: "김철수", major: "AI" },
-        { name: "이영희", major: "Data Science" },
+        { name: "김지현", major: "AI" },
+        { name: "이성학", major: "AI" },
+        { name: "김건우", major: "Web" },
+        { name: "김예은", major: "Web" },
+        { name: "김이삭", major: "Web" },
+        { name: "맹동훈", major: "Web" },
+        { name: "김근호", major: "Web" },
+        { name: "박은서", major: "..." },
+        { name: "윤성현", major: "Web" },
+        { name: "이승수", major: "Web" },
         // 추가 연구원...
     ];
     return (

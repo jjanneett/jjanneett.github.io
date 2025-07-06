@@ -7,7 +7,7 @@ function Professor() {
                     <img src="/LabSite/img/Professor.jpeg" alt="방진숙 교수님" className="rounded-circle shadow mb-3 pro-img"/>
                     <h2 className="fw-bold mt-4 mb-2">방진숙</h2>
                     <div className="mb-2">(Jinsuk Bang)</div>
-                    <div className="text-secondary mb-2">AI융합대학 컴퓨터공학부</div>
+                    <div className="text-secondary mb-2">호서대학교 AI융합대학 컴퓨터공학부</div>
                     <div className="mb-1">TEL : 041-540-5848</div>
                     <div className="mb-1">EMAIL : bluegony@hoseo.edu</div>
                 </div>
